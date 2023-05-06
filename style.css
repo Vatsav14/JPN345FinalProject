@@ -1,0 +1,199 @@
+body {
+    background-color: rgb(20, 20, 20);
+    margin: 0px;
+  }
+  
+  #menu {  
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  #menu-items {
+    margin-left: clamp(5rem, 25vw, 54rem);
+    position: relative;
+    z-index: 2;
+  }
+  
+  #menu[data-active-index="0"] > #menu-background-pattern {
+    background-position: 0% -17%;
+  }
+  
+  #menu[data-active-index="1"] > #menu-background-pattern {
+    background-position: 0% -34%;
+  }
+  
+  #menu[data-active-index="2"] > #menu-background-pattern {
+    background-position: 0% -51%;
+  }
+  
+  #menu[data-active-index="3"] > #menu-background-pattern {
+    background-position: 0% -68%;
+  }
+
+  #menu[data-active-index="4"] > #menu-background-pattern {
+    background-position: 0% -85%;
+  }
+
+  #menu[data-active-index="5"] > #menu-background-pattern {
+    background-position: 0% -100%;
+  }
+  
+  #menu[data-active-index="0"] > #menu-background-image {
+    background-position: center 25%;
+  }
+  
+  #menu[data-active-index="1"] > #menu-background-image {
+    background-position: center 30%;
+  }
+  
+  #menu[data-active-index="2"] > #menu-background-image {
+    background-position: center 35%;
+  }
+  
+  #menu[data-active-index="3"] > #menu-background-image {
+    background-position: center 40%;
+  }
+
+  #menu[data-active-index="4"] > #menu-background-image {
+    background-position: center 45%;
+  }
+
+  #menu[data-active-index="5"] > #menu-background-image {
+    background-position: center 50%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  
+  #menu-background-pattern {
+    background-image: radial-gradient(
+      rgba(250, 154, 245, 0.205) 9%, 
+      transparent 9%
+    );
+    background-position: 0% 0%;
+    background-size: 12vmin 12vmin;
+    height: 100vh;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    transition: opacity 800ms ease, 
+      background-size 800ms ease,
+      background-position 800ms ease;
+    width: 100vw;
+    opacity: 0.8;
+    z-index: 1;
+  }
+  
+  #menu-background-image {
+    background-image: url("https://c8.alamy.com/comp/2HGA2YT/design-template-for-maid-cafe-menu-with-cute-chibi-anime-maid-2HGA2YT.jpg");
+    background-position: center 25%;
+    background-size: 100vmax;
+    height: 100%;
+    left: 0px;  
+    opacity: 0.9;
+    position: absolute;
+    top: 0px;
+    transition: opacity 800ms ease,
+      background-size 800ms ease,
+      background-position 800ms ease;
+    width: 100%;
+    z-index: 0;
+  }
+  
+  #menu-items:hover ~ #menu-background-pattern {
+    background-size: 11vmin 11vmin;
+    opacity: 0.5;
+  }
+  
+  #menu-items:hover ~ #menu-background-image {
+    background-size: 120vmax;
+    opacity: 0.3;
+  }
+  
+  #menu-items:hover > .menu-item {
+    opacity: 0.3;
+  }
+  
+  #menu-items:hover > .menu-item:hover {
+    opacity: 1; 
+  }
+  
+  .menu-item {
+    color: rgba(251, 138, 183, 0.918);
+    cursor: pointer;
+    display: block;
+    /*font-family: 'Ibarra Real Nova', serif;*/
+    font-family: "Varela Round";
+    font-size: clamp(2rem, 5vw, 5rem);
+    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+    text-decoration: none;
+    transition: opacity 400ms ease;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  body {
+    animation: transitionIn 0.8s;
+  }
+
+  .top-left {
+    font-family: 'Varela Round';
+    font-size: 25px;
+    opacity: 0.5;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+  }
+
+  .top-middle {
+    font-family: 'Varela Round';
+    font-size: 25px;
+    opacity: 0.5;
+    position: absolute;
+    top: 25px;
+    right: 50%;
+  }
+
+  .top-right {
+    font-family: 'Varela Round';
+    font-size: 25px;
+    opacity: 0.5;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  .bottom-left {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 45%;
+    opacity: 0;
+    z-index: 1;
+  }
+  .bottom-left a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
